@@ -42,4 +42,9 @@ func main() {
 	)
 
 	fmt.Printf("Name: %s\nAge %d\nUid: %d\n", personNamse, personAge, personUid)
+
+	//
+	var a, b = 30, "vOVA"
+	fmt.Println(a, b)
+
 }
