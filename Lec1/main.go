@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	//Простейший ввывод на консоль. println - это вывод аргумента + '\n' - перенос на новую строчку
@@ -46,5 +49,23 @@ func main() {
 	//
 	var a, b = 30, "vOVA"
 	fmt.Println(a, b)
+
+	//Повтороное декларивование переменной приводит к ошибке компиляции
+	//var a = 200
+
+	//Короткая декларация (короткое объявление)
+	//var count int = 10
+	count_1 := 10
+	fmt.Println("Count:", count_1)
+	count_1++
+	fmt.Println("Count:", count_1)
+
+	//
+	//aArg, bArg := 10, "Vova"
+	//fmt.Println(aArg, bArg)
+
+	//
+	wight, length := 20.5, 30.2
+	fmt.Printf("Min dimensional of rectangle is : %.3f\n", math.Min(wight, length))
 
 }
