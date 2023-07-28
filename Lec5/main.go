@@ -48,7 +48,9 @@ func main() {
 	}
 
 	//Инициализация в блоке условного оператора
-	for(int i = 0; i < 10; i++){
-		
+	if num := 10; num%2 == 0 {
+		fmt.Println("EVEN")
+	} else {
+		fmt.Println("ODD")
 	}
 }
