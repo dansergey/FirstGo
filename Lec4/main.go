@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"unicode/utf8"
 	"unsafe"
 )
 
@@ -42,7 +44,47 @@ func main() {
 
 	//Float
 	//float32, float64
-	floatFirst, floatSecons := 5.67, 12.54
-	fmt.Printf("type of a %T and typr of %T\n", floatFirst, floatSecons)
+	floatFirst, floatSeconds := 5.67, 12.54
+	fmt.Printf("type of a %T and typr of %T\n", floatFirst, floatSeconds)
+	sum := floatFirst + floatSeconds
+	sub := floatFirst - floatSeconds
+	fmt.Println("Sum:", sum, "Sub:", sub)
+	fmt.Printf("Sum: %.3f and Sub %.3f\n", sum, sub)
+
+	//Numeric. Complex
+	c1 := complex(5, 7)
+	c2 := 12 + 32i
+	fmt.Println(c1 + c2)
+	fmt.Println(c1 * c2)
+
+	//String. Строка - это набор БАЙТ
+	name := "Fedya"
+	lastname := "Pupkin"
+	concat := name + " " + lastname
+	fmt.Println("Full name", concat)
+	fmt.Println("Length of string :", name, len(name)) // Функция Len() возращает количество элементов в наборе
+	name = "Федя"
+	fmt.Println("Length of string :", name, len(name))
+	fmt.Println("Amount of chars:", name, utf8.RuneCountInString(name))
+	//Rune - руна. Это один utf-ный символ.
+	//Поиск подстроки в строке
+	totalString, subString := "ABCDEDFG", "asd"
+	fmt.Println(strings.Contains(totalString, subString))
+	//rune -> alias int32
+	var sampleRune rune
+	var anotherRune rune = 'Q'
+	var thirdRune rune = 234
+	fmt.Println(sampleRune)
+	fmt.Printf("Rune as char %c\n", sampleRune)
+	fmt.Printf("Rune as char %c\n", anotherRune)
+	fmt.Printf("Rune as char %c\n", thirdRune)
+	// "A" < "abcd"
+	fmt.Println(strings.Compare("abcd", "def"))
+	fmt.Println(strings.Compare("abcd", "abcd"))
+	fmt.Println(strings.Compare("abcd", "a"))
+
+	//
+	var aByte byte // alias uint8
+	fmt.Println("Byte: ", aByte)
 
 }
