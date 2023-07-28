@@ -53,4 +53,20 @@ func main() {
 	} else {
 		fmt.Println("ODD")
 	}
+
+	//НЕ ИДЕОМАТИЧНО
+	if width := 100; width > 100 {
+		fmt.Println("Width > 100")
+	} else {
+		fmt.Println("Width <= 100")
+	}
+
+	//в go стараются избегать блока else
+	//ИДЕОМАТИЧНОСТЬ
+	if heigth := 100; heigth > 100 {
+		fmt.Println("height > 100")
+		return
+	}
+	fmt.Println("height <= 100")
+
 }
